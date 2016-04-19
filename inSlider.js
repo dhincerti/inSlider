@@ -17,10 +17,9 @@
     var element;
     var slideList;
     var slideLength = 0;
-    var nextIndex = 1;
+    var nextIndex = 0;
     var interval;
 
-    /* One time sets */
     var setElement = function(el) {
       element = el;
     };
@@ -33,7 +32,6 @@
       slideLength = slideList.length;
     };
 
-    /* Pagination */
     var setNextIndex = function(index) {
       nextIndex = nextIndex + 1 < slideLength ? index + 1 : 0;
     };
@@ -61,8 +59,6 @@
       });
     };
 
-    /* Animate Slide */
-
     var addSlideDefaultClasses = function() {
       element.addClass(mainDefaultClass);
       slideList.addClass(itemDefaultClass);
@@ -71,9 +67,6 @@
     var setSlideHeight = function() {
       if (settings.height == 'auto') {
         var activeSlide = element.find('.' + itemDefaultClass + '.' + activeClass);
-        if (activeSlide.lenght < 1) {
-          activeSlide = slideList.first();
-        }
         var newHeight = activeSlide.height();
         element.height(newHeight);
       } else {
@@ -95,21 +88,29 @@
         goToSlide(nextIndex);
       }, settings.interval);
     };
-
-    /* Start slide */
-
-    var init = function(element) {
+    
+    var sliderConf = function(element) {
       setElement(element);
       setSlideList();
       setSlideLength();
       addSlideDefaultClasses();
+    };
+    
+    var paginationConf = function() {
       addPagination();
       setPaginationElements();
-      slideList.eq(0).addClass(activeClass);
-      paginationElements.eq(0).addClass(activeClass);
-      setSlideHeight();
-      startAnimation();
       clickPaginationHandler();
+    };
+
+    var init = function(element) {
+      sliderConf(element);
+      paginationConf();
+
+      // Prevent the plugin to start before the images load
+      $(window).load(function() {
+        goToSlide(nextIndex);
+        startAnimation();
+      });
     };
 
     return this.each(function() {

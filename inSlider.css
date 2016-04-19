@@ -15,7 +15,7 @@
   transition: opacity 1s;
 }
 
-.inSlider .item:first-child,.inSlider .item.active {
+.inSlider .item.active {
   opacity: 1;
 }
 
@@ -33,7 +33,7 @@
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
-  transform: translateX(50%);
+  transform: translateX(-50%);
 }
 
 .inSlider .slider-pagination-bottom {
