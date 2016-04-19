@@ -19,17 +19,31 @@
   opacity: 1;
 }
 
+.inSlider .item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .inSlider .slider-pagination {
   position: absolute;
   left: 50%;
-  top: 0;
   display: block;
   padding: 0;
-  margin: 10px 0 0;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(50%);
+}
+
+.inSlider .slider-pagination-bottom {
+  bottom: 0;
+  margin: 0 0 10px;
+}
+
+.inSlider .slider-pagination-top {
+  top: 0;
+  margin: 10px 0 0;
 }
 
 .inSlider .pagination-item {

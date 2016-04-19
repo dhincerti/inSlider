@@ -51,11 +51,12 @@ $(document).ready(function(){
 
 ## Options
 
-| Name        |  Type  | Default Value | Description       |
-| ----------- |:------:|:-------------:| -----------------:|
-| interval    | number | 5000          | The delay before the call of the next item |
-| slidesClass | string | ".item"       | Used to add a different class to your own stylization |
-| height      | number | "auto"        | Define the slider height. The default value "auto" will automatically set the height based on the items elements |
+| Name                  |  Type  | Default Value | Description       |
+| -----------           |:------:|:-------------:| -----------------:|
+| interval              | number | 5000          | The delay before the call of the next item |
+| slidesClass           | string | ".item"       | Used to add a different class to your own stylization |
+| height                | number | "auto"        | Define the slider height. The default value "auto" will automatically set the height based on the items elements |
+| paginationPosition    | string | "bottom"      | The navigation position. Accepted values: "bottom" or "top" |
 
 ### More to came
 * Next and previus pagination

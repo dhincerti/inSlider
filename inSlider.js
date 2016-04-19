@@ -4,7 +4,8 @@
     var defaults = {
       'interval' : 5000,
       'slidesClass' : '.item',
-      'height' : 'auto'
+      'height' : 'auto',
+      'paginationPosition' : 'bottom'
     };
 
     var settings = $.extend({}, defaults, options);
@@ -38,7 +39,8 @@
     };
 
     var addPagination = function() {
-      var pagination = '<ul class="' + paginationClass + '">';
+      var paginationPositionClass = paginationClass + '-' + settings.paginationPosition;
+      var pagination = '<ul class="' + paginationClass + ' ' + paginationPositionClass + '">';
       for (i = 1; i <= slideLength; i++) {
         pagination += '<li class="' + paginationItemClass + '" data-index="' + i + '">' + i + '</li>';
       }
@@ -91,7 +93,7 @@
     var startAnimation = function() {
       interval = setInterval(function() {
         goToSlide(nextIndex);
-      }, options.interval);
+      }, settings.interval);
     };
 
     /* Start slide */
