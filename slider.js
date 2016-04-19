@@ -3,15 +3,15 @@
 
     var defaults = {
       'timeout' : 5000,
-      'slidesClass' : '.slide',
+      'slidesClass' : '.item',
       'height' : 'auto'
     };
 
     var settings = $.extend({}, defaults, options);
-    var mainDefaultClass = "slide-content";
-    var slidesDefaultClass = "slide";
+    var mainDefaultClass = "inSlider";
+    var itemDefaultClass = "item";
     var activeClass = "active";
-    var paginationClass = "slide-pagination";
+    var paginationClass = "slider-pagination";
     var paginationItemClass = "pagination-item";
     var element;
     var slideList;
@@ -63,12 +63,12 @@
 
     var addSlideDefaultClasses = function() {
       element.addClass(mainDefaultClass);
-      slideList.addClass(slidesDefaultClass);
+      slideList.addClass(itemDefaultClass);
     };
 
     var setSlideHeight = function() {
       if (settings.height == 'auto') {
-        var activeSlide = element.find('.' + slidesDefaultClass + '.' + activeClass);
+        var activeSlide = element.find('.' + itemDefaultClass + '.' + activeClass);
         if (activeSlide.lenght < 1) {
           activeSlide = slideList.first();
         }
