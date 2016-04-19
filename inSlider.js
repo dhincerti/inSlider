@@ -2,7 +2,7 @@
   $.fn.inSlider = function(options) {
 
     var defaults = {
-      'timeout' : 5000,
+      'interval' : 5000,
       'slidesClass' : '.item',
       'height' : 'auto'
     };
@@ -91,7 +91,7 @@
     var startAnimation = function() {
       interval = setInterval(function() {
         goToSlide(nextIndex);
-      }, options.timeout);
+      }, options.interval);
     };
 
     /* Start slide */
