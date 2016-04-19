@@ -1,4 +1,9 @@
-(function($) {
+/*!
+ * inSlider - Simple slider jQuery plugin that uses css3 to make the effects 
+ * Original author: @dhincerti
+ */
+
+;(function($) {
   $.fn.inSlider = function(options) {
 
     var defaults = {
@@ -15,13 +20,14 @@
     var paginationClass = "slider-pagination";
     var paginationItemClass = "pagination-item";
     var element;
+    var paginationElements;
     var slideList;
     var slideLength = 0;
     var nextIndex = 0;
     var interval;
 
     var setElement = function(el) {
-      element = el;
+      element = $(el);
     };
 
     var setSlideList = function() {
@@ -51,7 +57,7 @@
     };
 
     var clickPaginationHandler = function() {
-      $('body').delegate('.' + paginationItemClass, "click", function() {
+      $(element).delegate('.' + paginationItemClass, "click", function() {
         clearInterval(interval);
         var goToIndex = $(this).data('index') - 1;
         goToSlide(goToIndex);
@@ -114,7 +120,7 @@
     };
 
     return this.each(function() {
-      init($(this));
+      init(this);
     });
 
   };

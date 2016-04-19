@@ -1,6 +1,6 @@
 # inSlider
 
-The inSlider is a really simple slider jquery plugin that uses css3 to make the effects.
+The inSlider is a really simple slider jQuery plugin that uses css3 to make the effects.
 
 ## How to use
 
@@ -59,6 +59,7 @@ $(document).ready(function(){
 | paginationPosition    | string | "bottom"      | The navigation position. Accepted values: "bottom" or "top" |
 
 ### More to came
+* Multiple instantiations
 * Next and previus pagination
 * Support for non-automatically transition
 * Fully responsive to adapt to any device
