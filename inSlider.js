@@ -27,15 +27,15 @@
     var interval;
 
     var setElement = function(el) {
-      element = $(el);
+      this.element = $(el);
     };
 
     var setSlideList = function() {
-      slideList = element.find(settings.slidesClass);
+      this.slideList = this.element.find(settings.slidesClass);
     };
 
     var setSlideLength = function() {
-      slideLength = slideList.length;
+      slideLength = this.slideList.length;
     };
 
     var setNextIndex = function(index) {
@@ -49,11 +49,11 @@
         pagination += '<li class="' + paginationItemClass + '" data-index="' + i + '">' + i + '</li>';
       }
       pagination += '</ul>';
-      element.append(pagination);
+      this.element.append(pagination);
     };
 
     var setPaginationElements = function() {
-      paginationElements = element.find('.' + paginationClass + ' li');
+      paginationElements = this.element.find('.' + paginationClass + ' li');
     };
 
     var clickPaginationHandler = function() {
@@ -66,24 +66,24 @@
     };
 
     var addSlideDefaultClasses = function() {
-      element.addClass(mainDefaultClass);
-      slideList.addClass(itemDefaultClass);
+      this.element.addClass(mainDefaultClass);
+      this.slideList.addClass(itemDefaultClass);
     };
 
     var setSlideHeight = function() {
       if (settings.height == 'auto') {
-        var activeSlide = element.find('.' + itemDefaultClass + '.' + activeClass);
+        var activeSlide = this.element.find('.' + itemDefaultClass + '.' + activeClass);
         var newHeight = activeSlide.height();
-        element.height(newHeight);
+        this.element.height(newHeight);
       } else {
-        element.height(settings.height);
+        this.element.height(settings.height);
       }
     };
 
     var goToSlide = function(index) {
-      slideList.removeClass(activeClass);
+      this.slideList.removeClass(activeClass);
       paginationElements.removeClass(activeClass);
-      slideList.eq(index).addClass(activeClass);
+      this.slideList.eq(index).addClass(activeClass);
       paginationElements.eq(index).addClass(activeClass);
       setSlideHeight();
       setNextIndex(index);

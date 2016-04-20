@@ -45,22 +45,20 @@ Use the .inSlider() function to trigger the plugin on your slider main container
 
 ```javascript
 $(document).ready(function(){
-  $('.inSlider').inSlider();
+  $('#mySlider').inSlider();
 });
 ```
 
 ## Options
 
 | Name                  |  Type  | Default Value | Description       |
-| -----------           |:------:|:-------------:| -----------------:|
+| --------------------- |:------:|:-------------:| -----------------:|
 | interval              | number | 5000          | The delay before the call of the next item |
 | slidesClass           | string | ".item"       | Used to add a different class to your own stylization |
 | height                | number | "auto"        | Define the slider height. The default value "auto" will automatically set the height based on the items elements |
 | paginationPosition    | string | "bottom"      | The navigation position. Accepted values: "bottom" or "top" |
 
 ### More to came
-* Multiple instantiations
-* Next and previus pagination
 * Support for non-automatically transition
 * Fully responsive to adapt to any device
 * More transition effects
