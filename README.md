@@ -52,15 +52,76 @@ $(document).ready(function(){
 ## Options
 
 | Name                  |  Type  | Default Value | Description       |
-| --------------------- |:------:|:-------------:| -----------------:|
+| :-------------------- |:------:|:-------------:| -----------------:|
 | interval              | number | 5000          | The delay before the call of the next item |
 | slidesClass           | string | ".item"       | Used to add a different class to your own stylization |
 | height                | number | "auto"        | Define the slider height. The default value "auto" will automatically set the height based on the items elements |
 | paginationPosition    | string | "bottom"      | The navigation position. Accepted values: "bottom" or "top" |
 
+
+## Style
+Because this plugin only make the slide transition, you can easily style it by you on.
+
+#### Exemple 1
+If you wanna to limit the width and keep the slider responsive, all you need to do is add a max-width.
+
+```css
+#mySlider {
+  max-width: 
+}
+```
+
+#### Exemple 2
+Adding some title.
+
+```html
+<div id="mySlider" class="inSlider">
+    <div class="item">
+      <img src="images/image-1.jpg" alt="myimage" title="myimage" />
+      <h2>You title here 1</h2>
+    </div>
+    <div class="item">
+      <img src="images/image-2.jpg" alt="myimage" title="myimage" />
+      <h2>You title here 2</h2>
+    </div>
+    <div class="item">
+      <img src="images/image-3.jpg" alt="myimage" title="myimage" />
+      <h2>You title here 3</h2>
+    </div>
+    <div class="item">
+      <img src="images/image-4.jpg" alt="myimage" title="myimage" />
+      <h2>You title here 4</h2>
+    </div>
+    <div class="item">
+      <img src="images/image-5.jpg" alt="myimage" title="myimage" />
+      <h2>You title here 5</h2>
+    </div>
+  </div>
+```
+
+```css
+.inSlider h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 2.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-shadow: 2px 2px 2px #000;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 2px #000;
+}
+```
+
 ### More to came
 * Support for non-automatically transition
-* Fully responsive to adapt to any device
 * More transition effects
 * Device touch
 * Video

@@ -95,12 +95,21 @@
         goToSlide(nextIndex);
       }, settings.interval);
     };
+    
+    var resizeCallback = function() {
+      setSlideHeight();
+    }
+    
+    var resizeHandler = function () {
+      $(window).resize(resizeCallback);
+    };
 
     var sliderConf = function(element) {
       setElement(element);
       setSlideList();
       setSlideLength();
       addSlideDefaultClasses();
+      resizeHandler();
     };
 
     var paginationConf = function() {
